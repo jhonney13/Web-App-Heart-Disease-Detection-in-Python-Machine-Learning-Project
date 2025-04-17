@@ -34,4 +34,4 @@ def predict():
     return render_template('index.html', prediction=result)
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(debug=False, host='0.0.0.0', port=5000)  # Disable debug mode and set host/port for production
