@@ -2,6 +2,8 @@
 
 A web application that predicts the likelihood of heart disease based on medical attributes using a machine learning model. This project includes a Flask server and a responsive web interface for making predictions.
 
+**Live Demo**: [https://heart-disease-detection-in-python.onrender.com/](https://heart-disease-detection-in-python.onrender.com/)
+
 ## 📋 Overview
 
 This application uses a trained machine learning model to predict heart disease based on patient data. The model was trained using the heart disease dataset containing 1024 patient records with various medical attributes, achieving an accuracy of approximately 98%.
