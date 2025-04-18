@@ -61,13 +61,128 @@
 
         <form method="POST" action="/predict">
             <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
-                {% for field in ['age','sex','cp','trestbps','chol','fbs','restecg','thalach','exang','oldpeak','slope','ca','thal'] %}
-                    <div>
-                        <label class="block text-sm font-medium text-gray-700 dark:text-gray-300 capitalize">{{ field }}</label>
-                        <input type="number" step="any" name="{{ field }}" required
-                               class="mt-1 block w-full px-3 py-2 bg-gray-50 dark:bg-gray-700 border border-gray-300 dark:border-gray-600 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-indigo-500 dark:focus:ring-indigo-400 text-gray-900 dark:text-white transition-colors duration-200">
-                    </div>
-                {% endfor %}
+                <!-- Age -->
+                <div>
+                    <label class="block text-sm font-medium text-gray-700 dark:text-gray-300">Age</label>
+                    <input type="number" step="any" name="age" required
+                           placeholder="Enter your age"
+                           class="mt-1 block w-full px-3 py-2 bg-gray-50 dark:bg-gray-700 border border-gray-300 dark:border-gray-600 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-indigo-500 dark:focus:ring-indigo-400 text-gray-900 dark:text-white transition-colors duration-200">
+                </div>
+
+                <!-- Sex -->
+                <div>
+                    <label class="block text-sm font-medium text-gray-700 dark:text-gray-300">Sex</label>
+                    <select name="sex" required
+                            class="mt-1 block w-full px-3 py-2 bg-gray-50 dark:bg-gray-700 border border-gray-300 dark:border-gray-600 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-indigo-500 dark:focus:ring-indigo-400 text-gray-900 dark:text-white transition-colors duration-200">
+                        <option value="1">Male</option>
+                        <option value="0">Female</option>
+                    </select>
+                </div>
+
+                <!-- Chest Pain Type -->
+                <div>
+                    <label class="block text-sm font-medium text-gray-700 dark:text-gray-300">Chest Pain Type</label>
+                    <select name="cp" required
+                            class="mt-1 block w-full px-3 py-2 bg-gray-50 dark:bg-gray-700 border border-gray-300 dark:border-gray-600 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-indigo-500 dark:focus:ring-indigo-400 text-gray-900 dark:text-white transition-colors duration-200">
+                        <option value="0">Typical Angina</option>
+                        <option value="1">Atypical Angina</option>
+                        <option value="2">Non-Anginal Pain</option>
+                        <option value="3">Asymptomatic</option>
+                    </select>
+                </div>
+
+                <!-- Resting Blood Pressure -->
+                <div>
+                    <label class="block text-sm font-medium text-gray-700 dark:text-gray-300">Resting Blood Pressure (mm Hg)</label>
+                    <input type="number" step="any" name="trestbps" required
+                           placeholder="e.g., 120"
+                           class="mt-1 block w-full px-3 py-2 bg-gray-50 dark:bg-gray-700 border border-gray-300 dark:border-gray-600 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-indigo-500 dark:focus:ring-indigo-400 text-gray-900 dark:text-white transition-colors duration-200">
+                </div>
+
+                <!-- Cholesterol -->
+                <div>
+                    <label class="block text-sm font-medium text-gray-700 dark:text-gray-300">Cholesterol (mg/dL)</label>
+                    <input type="number" step="any" name="chol" required
+                           placeholder="e.g., 200"
+                           class="mt-1 block w-full px-3 py-2 bg-gray-50 dark:bg-gray-700 border border-gray-300 dark:border-gray-600 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-indigo-500 dark:focus:ring-indigo-400 text-gray-900 dark:text-white transition-colors duration-200">
+                </div>
+
+                <!-- Fasting Blood Sugar -->
+                <div>
+                    <label class="block text-sm font-medium text-gray-700 dark:text-gray-300">Fasting Blood Sugar > 120 mg/dL</label>
+                    <select name="fbs" required
+                            class="mt-1 block w-full px-3 py-2 bg-gray-50 dark:bg-gray-700 border border-gray-300 dark:border-gray-600 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-indigo-500 dark:focus:ring-indigo-400 text-gray-900 dark:text-white transition-colors duration-200">
+                        <option value="1">Yes</option>
+                        <option value="0">No</option>
+                    </select>
+                </div>
+
+                <!-- Resting ECG Results -->
+                <div>
+                    <label class="block text-sm font-medium text-gray-700 dark:text-gray-300">Resting ECG Results</label>
+                    <select name="restecg" required
+                            class="mt-1 block w-full px-3 py-2 bg-gray-50 dark:bg-gray-700 border border-gray-300 dark:border-gray-600 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-indigo-500 dark:focus:ring-indigo-400 text-gray-900 dark:text-white transition-colors duration-200">
+                        <option value="0">Normal</option>
+                        <option value="1">ST-T Wave Abnormality</option>
+                        <option value="2">Left Ventricular Hypertrophy</option>
+                    </select>
+                </div>
+
+                <!-- Maximum Heart Rate Achieved -->
+                <div>
+                    <label class="block text-sm font-medium text-gray-700 dark:text-gray-300">Maximum Heart Rate Achieved</label>
+                    <input type="number" step="any" name="thalach" required
+                           placeholder="e.g., 150"
+                           class="mt-1 block w-full px-3 py-2 bg-gray-50 dark:bg-gray-700 border border-gray-300 dark:border-gray-600 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-indigo-500 dark:focus:ring-indigo-400 text-gray-900 dark:text-white transition-colors duration-200">
+                </div>
+
+                <!-- Exercise-Induced Angina -->
+                <div>
+                    <label class="block text-sm font-medium text-gray-700 dark:text-gray-300">Exercise-Induced Angina</label>
+                    <select name="exang" required
+                            class="mt-1 block w-full px-3 py-2 bg-gray-50 dark:bg-gray-700 border border-gray-300 dark:border-gray-600 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-indigo-500 dark:focus:ring-indigo-400 text-gray-900 dark:text-white transition-colors duration-200">
+                        <option value="1">Yes</option>
+                        <option value="0">No</option>
+                    </select>
+                </div>
+
+                <!-- ST Depression Induced by Exercise -->
+                <div>
+                    <label class="block text-sm font-medium text-gray-700 dark:text-gray-300">ST Depression Induced by Exercise</label>
+                    <input type="number" step="any" name="oldpeak" required
+                           placeholder="e.g., 1.5"
+                           class="mt-1 block w-full px-3 py-2 bg-gray-50 dark:bg-gray-700 border border-gray-300 dark:border-gray-600 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-indigo-500 dark:focus:ring-indigo-400 text-gray-900 dark:text-white transition-colors duration-200">
+                </div>
+
+                <!-- Slope of the Peak Exercise ST Segment -->
+                <div>
+                    <label class="block text-sm font-medium text-gray-700 dark:text-gray-300">Slope of the Peak Exercise ST Segment</label>
+                    <select name="slope" required
+                            class="mt-1 block w-full px-3 py-2 bg-gray-50 dark:bg-gray-700 border border-gray-300 dark:border-gray-600 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-indigo-500 dark:focus:ring-indigo-400 text-gray-900 dark:text-white transition-colors duration-200">
+                        <option value="0">Upsloping</option>
+                        <option value="1">Flat</option>
+                        <option value="2">Downsloping</option>
+                    </select>
+                </div>
+
+                <!-- Number of Major Vessels Colored by Fluoroscopy -->
+                <div>
+                    <label class="block text-sm font-medium text-gray-700 dark:text-gray-300">Number of Major Vessels (0-3)</label>
+                    <input type="number" step="1" name="ca" required
+                           placeholder="e.g., 2"
+                           class="mt-1 block w-full px-3 py-2 bg-gray-50 dark:bg-gray-700 border border-gray-300 dark:border-gray-600 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-indigo-500 dark:focus:ring-indigo-400 text-gray-900 dark:text-white transition-colors duration-200">
+                </div>
+
+                <!-- Thalassemia -->
+                <div>
+                    <label class="block text-sm font-medium text-gray-700 dark:text-gray-300">Thalassemia</label>
+                    <select name="thal" required
+                            class="mt-1 block w-full px-3 py-2 bg-gray-50 dark:bg-gray-700 border border-gray-300 dark:border-gray-600 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-indigo-500 dark:focus:ring-indigo-400 text-gray-900 dark:text-white transition-colors duration-200">
+                        <option value="1">Normal</option>
+                        <option value="2">Fixed Defect</option>
+                        <option value="3">Reversible Defect</option>
+                    </select>
+                </div>
             </div>
 
             <div class="text-center mt-8">
@@ -94,8 +209,9 @@
 
     <div class="fixed bottom-0 left-0 right-0 flex justify-center bg-gray-100 dark:bg-gray-900 py-8 shadow-lg z-0 transition-colors duration-200">
         <div class="text-center text-sm text-gray-700 dark:text-gray-300 w-3/4 md:w-1/2">
-            <p class="italic text-xs text-red-500 dark:text-red-400">
+            <p class="italic text-xs text-gray-600 dark:text-gray-400">
                 Disclaimer: This model has an accuracy of 98%. The actual results may vary, and it is always best to consult with a doctor for an accurate diagnosis.
+            </p>
         </div>
     </div>
 
