@@ -2,7 +2,7 @@
 
 A web application that predicts the likelihood of heart disease based on medical attributes using a machine learning model. This project includes a Flask server and a responsive web interface for making predictions.
 
-**Live Demo**: [https://heart-disease-detection-in-python.onrender.com/](https://heart-disease-detection-in-python.onrender.com/)
+**Live Demo**: [https://hdp-cwhtakavg0dubzgc.centralindia-01.azurewebsites.net/](https://hdp-cwhtakavg0dubzgc.centralindia-01.azurewebsites.net/)
 
 ## 📋 Overview
 
